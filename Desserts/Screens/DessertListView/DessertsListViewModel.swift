@@ -30,7 +30,7 @@ final class DessertsListViewModel: ObservableObject {
                         !$0.strMeal.isEmpty
                     }
                     .sorted(by: { d1, d2 in
-                        d1.strMeal < d2.strMeal
+                        d1.strMeal.lowercased() < d2.strMeal.lowercased()
                     })
                 case .failure(let error):
                     switch error {
