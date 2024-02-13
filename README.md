@@ -26,3 +26,4 @@ I have used the MVVM design pattern to architect the project where all my views 
 - App logo and the NavigationTitle for the DetailedView could have been scaled.
 
 
+PS: I want to express my gratitude for the opportunity to work on this assessment. Prior to this project, I didn't have any experience with Swift or SwiftUI. However, I embraced the challenge and dedicated myself to learning these technologies within a week to complete the project. I'm thankful for the chance to delve into iOS development and am excited about the possibilities it presents. Thank you for helping me kickstart my journey into iOS development.
