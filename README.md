@@ -4,7 +4,7 @@ Take home project from Fetch Reward for the role of iOS Apprenticeship.
 
 Link to the assessment: [iOS Coding Challenge](https://fetch-hiring.s3.amazonaws.com/iOS+coding+exercise.pdf)
 
-In this project, I have created the User interface with programmatic UI only using SwiftUI entirely (except for SafariView where I have used UIKit). I have added some extra features such as the Watch on YouTube button as it seemed more complete. Apart from this, I have also created some basic unit testing and UI Testing.
+In this project, I have created the User interface with programmatic UI only using SwiftUI entirely (except for SafariView where I have used UIKit). I have added some extra features such as the Watch on YouTube button as it seemed more complete. Apart from this, I have also created some basic unit testing and UI Testing. The deployment target for this project is iOS 17.2.
 
 ## Features
 
@@ -21,6 +21,7 @@ I have used the MVVM design pattern to architect the project where all my views 
 - I have skipped entries which are empty in the JSON request.
 
 ## Scope of Improvement
+
 - Testing could have been more thorough and targeted.
 - App logo and the NavigationTitle for the DetailedView could have been scaled.
 
