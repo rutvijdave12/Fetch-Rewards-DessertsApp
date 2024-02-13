@@ -10,6 +10,7 @@ In this project, I have created the User interface with programmatic UI only usi
 
 - Alerts on loss of Internet connection or unexpected errors to avoid crashes.
 - LoadingView and image placeholders are added before the data from API is fetched to avoid showing the users empty UI.
+- The Watch on YouTube button with SafariView.
 
 ## Architecture
 
