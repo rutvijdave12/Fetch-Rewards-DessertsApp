@@ -7,30 +7,46 @@
 
 import XCTest
 @testable import Desserts
+import Foundation
 
 final class DessertsTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetDessertsNotNil(){
+        let networkManagerInstance = NetworkManager()
+        networkManagerInstance.getDesserts { result in
+            XCTAssertNotNil(result)
         }
     }
-
+    
+    func testGetDessertsByCorrectIDNotNil(){
+        let networkManagerInstance = NetworkManager()
+        let expectation = XCTestExpectation(description: "Network request completed")
+        networkManagerInstance.getDessertByID(id: "53049") { result in
+            XCTAssertNotNil(result)
+            expectation.fulfill()
+            
+        }
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func testGetDessertsByWrongIDNotNil(){
+        let networkManagerInstance = NetworkManager()
+        networkManagerInstance.getDessertByID(id: "1234") { result in
+            XCTAssertNotNil(result)
+        }
+    }
+    
+    func testGetDessertsByCorrectID(){
+        let networkManagerInstance = NetworkManager()
+        let expectation = XCTestExpectation(description: "Network request completed")
+        networkManagerInstance.getDessertByID(id: "53049") { result in
+            switch result {
+            case .success(let dessertDetails):
+                XCTAssertEqual(dessertDetails[0].idMeal, "53049")
+            case .failure(let error):
+                XCTAssertTrue(error is Error)
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 2)
+    }
 }
